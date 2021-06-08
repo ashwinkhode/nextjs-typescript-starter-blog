@@ -4,7 +4,6 @@ import Head from 'next/head'
 import Date from '../../components/date'
 
 export default function Post({ postData }: any) {
-  console.log(postData)
   return (
     <Layout>
       <Head>

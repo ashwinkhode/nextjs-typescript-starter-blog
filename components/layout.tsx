@@ -34,8 +34,7 @@ export default function Layout({ children, home }: LayoutProps) {
       <header className={styles.header}>
         {home ? (
           <>
-            <Image
-              priority
+            <img
               src="/profile.jpg"
               className="borderCircle"
               height={144}
@@ -48,8 +47,7 @@ export default function Layout({ children, home }: LayoutProps) {
           <>
             <Link href="/">
               <a>
-                <Image
-                  priority
+                <img
                   src="/profile.jpg"
                   className="borderCircle"
                   height={108}
