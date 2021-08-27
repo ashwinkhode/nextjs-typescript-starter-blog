@@ -32,7 +32,17 @@ export default function Home({ allPostsData }: HomeProps) {
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
         <p>
-          S/O to @omkar_k45, @codetastic1, and @iamblue175
+          S/o to <a href='https://twitter.com/omkar_k45'>
+            @omkar_k45
+            </a>
+           {", "}
+            <a href='https://twitter.com/codetastic1'>
+             @codetastic1
+            </a>
+           {", & "}
+            <a href='https://twitter.com/iamblue175'>
+             @iamblue175
+            </a>
         </p>
       </section>
       <section className=" headingmd padding1px">
