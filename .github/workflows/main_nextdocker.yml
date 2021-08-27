@@ -26,12 +26,28 @@ jobs:
         username: ${{ secrets.AzureAppService_ContainerUsername_2b726d52055f4c59a65a6647b0fa7d01 }}
         password: ${{ secrets.AzureAppService_ContainerPassword_238b4f1be2834dc2adc1d77abbf4399e }}
 
+    - name: Cache Docker layers
+      uses: actions/cache@v2
+      with:
+        path: /tmp/.buildx-cache
+        # Key is named differently to avoid collision
+        key: ${{ runner.os }}-multi-buildx-${{ github.sha }}
+        restore-keys: |
+          ${{ runner.os }}-multi-buildx
+
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
         tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_2b726d52055f4c59a65a6647b0fa7d01 }}/nextdocker:${{ github.sha }}
         file: ./Dockerfile
+        cache-from: type=local,src=/tmp/.buildx-cache
+        cache-to: type=local,mode=max,dest=/tmp/.buildx-cache-new
+
+    - name: Move cache
+      run: |
+        rm -rf /tmp/.buildx-cache
+        mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
   deploy:
     runs-on: ubuntu-latest
