@@ -31,6 +31,9 @@ export default function Home({ allPostsData }: HomeProps) {
           (This is a sample website - you’ll be building a site like this in{' '}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
+        <p>
+          S/O to @omkar_k45, @codetastic1, and @iamblue175
+        </p>
       </section>
       <section className=" headingmd padding1px">
         <h2 className=" headinglg">Blog</h2>
