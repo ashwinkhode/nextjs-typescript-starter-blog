@@ -32,7 +32,7 @@ export default function Home({ allPostsData }: HomeProps) {
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
         <p>
-          S/o to <a href='https://twitter.com/omkar_k45'>
+          S/o to my homies {" "} <a href='https://twitter.com/omkar_k45'>
             @omkar_k45
             </a>
            {", "}
